@@ -1,14 +1,20 @@
 package main
 
-// func main() {
-// 	// create store layer
-// 	storeLayer := storelayer.New()
+import (
+	"github.com/dbrinkk/TodoApp/applayer"
+	"github.com/dbrinkk/TodoApp/httplayer"
+	"github.com/dbrinkk/TodoApp/storelayer"
+)
 
-// 	// create app layer
-// 	appLayer := applayer.New(storeLayer)
+func main() {
+	// 	// create store layer
+	storeLayer := storelayer.New()
 
-// 	// create http layer
-// 	api := httplayer.New(appLayer)
+	// 	// create app layer
+	appLayer := applayer.New(storeLayer)
 
-// 	api.Engage()
-// }
+	// 	// create http layer
+	api := httplayer.New(appLayer)
+
+	api.Engage()
+}
